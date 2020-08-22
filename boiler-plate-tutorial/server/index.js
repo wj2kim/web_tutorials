@@ -88,6 +88,11 @@ app.get("/api/user/logout", auth, (req, res) => {
 
 
 // port number 5000 is standard port number for node.js
-app.listen(5000, () => {
-    console.log("Server is ON!")
+
+// make port listens to dynamic port 
+
+const port = process.env.port || 5000
+
+app.listen(port, () => {
+    console.log(`Server is now running on ${ port }`);
 });
