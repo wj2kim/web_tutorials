@@ -13,7 +13,7 @@ const config = require('./config/key');
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true)
 
-mongoose.connect(config.mongoURI,
+mongoose.connect(config.mongodbURI,
  {useNewUrlParser: true })
     .then(() => console.log('DB connected'))
     .catch(err => console.error(err));
@@ -24,6 +24,9 @@ app.use(bodyParser.urlencoded({extended : true })); // set extended to true to g
 app.use(bodyParser.json()); // to use json
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+    res.json({"Test":"Deploy seems successfully done!"});
+})
 
 app.get("/api/user/auth", auth, (req, res) => {
     res.status(200).json({
@@ -91,7 +94,7 @@ app.get("/api/user/logout", auth, (req, res) => {
 
 // make port listens to dynamic port 
 
-const port = process.env.port || 5000
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(`Server is now running on ${ port }`);

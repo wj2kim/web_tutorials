@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "tutorial for building a basic boiler plate for app",
   "main": "index.js",
-  "engine": {
+  "engines": {
     "node" : "12.18.3",
     "npm" : "6.14.6"
   },
