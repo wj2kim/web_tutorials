@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class About extends Component {
+class Register extends Component {
     constructor(props) {
         super(props)
 
@@ -12,10 +12,11 @@ class About extends Component {
     render() {
         return (
             <div>
-                Hello This is Index
+                This is Register Page
             </div>
         )
     }
 }
 
-export default About
+export default Register
+
