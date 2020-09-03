@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema({
     }
 })
 
-// function for hasㅗing user's password
+// function for hashing user's password
 userSchema.pre('save', function( next ) {
     let user = this;
     

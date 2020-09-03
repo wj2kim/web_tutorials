@@ -41,6 +41,7 @@ app.get("/api/users/auth", auth, (req, res) => {
 
 app.post('/api/users/register', (req, res) => {
     const user = new User(req.body); // this is able due to body-parser
+    console.log('comming here');
 
     user.save((err, doc) => {
         if(err) return res.json({success: false, err });
@@ -52,7 +53,6 @@ app.post('/api/users/register', (req, res) => {
 });
 
 app.post('/api/users/login', (req, res) => {
-    console.log('comming here');
     // find email
     User.findOne({ email: req.body.email }, (err, user) => {
         if(!user){
