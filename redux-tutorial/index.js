@@ -27,7 +27,7 @@ function reducer(state = {} , action ) {
 }
 
 
-const store = createStore();
+const store = createStore(reducer)
 
 function update() {
     console.log(store.getState());
